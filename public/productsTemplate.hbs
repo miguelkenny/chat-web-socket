@@ -1,0 +1,12 @@
+{{#if nombre}}
+    <tr>
+        <td>{{ id }}</td>
+        <td>{{ nombre }}</td>
+        <td>${{ precio }}</td>
+        <td><img src={{ url }} alt={{ nombre }} style="width: 50px" /></td>
+    </tr>
+{{else}}
+    <div class="border d-grid gap-2 col-6 mx-auto text-center mt-5">
+        <p class="display-5" style="color: red;">No se encontraron productos</p>
+    </div>
+{{/if}}

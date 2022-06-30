@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat - WebSocket</title>
+</head>
+<body>
+    <mani class="row p-4">
+        <div class="col-8">
+            <div class="container border rounded mt-4 shadow">
+                <div class="text-center mt-5">
+                    <p class="display-4">Cargar Productos</p>
+                </div>
+                <form class="form" id="formProducts">
+                    <div class="d-grid gap-2 col-6 mx-auto m-2">
+                        <input class="form-control" id="nameProduct" type="text" placeholder="Nombre" name="nombre">
+                    </div>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <input class="form-control" id="priceProduct" type="number" placeholder="Precio" name="precio">
+                    </div>
+                    <div class="d-grid gap-2 col-6 mx-auto m-2">
+                        <input class="form-control" id="imgProduct" type="text" placeholder="Foto URL" name="url">
+                    </div>
+                    <div class="d-grid gap-2 col-6 mx-auto mb-4">
+                        <button type="submit" class="btn btn-primary btn-lg mt-4">Agregar Producto</button>
+                    </div>
+                </form>   
+            </div>
+
+            <div class="container border rounded shadow mt-4 p-3">
+                <div class="mt-5 text-center">
+                    <p class="display-5">Lista de Productos</p>
+                </div>
+                    <table class="table table-striped table-info rounded">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Imagen</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableProducts">
+                        </tbody>
+                    </table>
+            </div>
+        </div>    
+        <div class="container border rounded shadow mt-4 p-3 col-4">
+            <div class="display-5 mb-4">Centro de Mensajes</div>
+            <form id="formMessages"> 
+                <input class="form-control" id="emailUser" type="email" placeholder="Email" required />
+                <div class="mt-4 mb-4" id="messagesAll"></div>
+                <div class="row text-center">
+                    <div class="col-8">
+                        <input class="form-control" id="messageUser" type="text" placeholder="Mensaje" />
+                    </div>
+                    <div class="col-4">
+                        <input class="btn btn-primary" type="submit" value="Enviar" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </mani>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./socket.js"></script>
+</body>
+</html>
